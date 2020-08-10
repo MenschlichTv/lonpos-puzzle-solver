@@ -7,7 +7,11 @@ Every thousand new solutions get generated in a html file for a better overview.
 Unfortunately, the last <1000 solutions wont get sended into a html file, but all possible solutions still get printed into the console after finishing the algorithm, so you can still check if every solution is unique.
 
 
+
 Lonpos Version Reference:
+
 Name: IQ Puzzler Pro
+
 Company: SmartGames
+
 Link: https://www.smartgames.eu/de/spiele-f%C3%BCr-einen-spieler/iq-puzzler-pro
