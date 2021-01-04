@@ -2,7 +2,6 @@ package com.eurofunk.apprentice;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Game {
     private ArrayList<Block> blockList = new ArrayList<>();
@@ -17,8 +16,9 @@ public class Game {
         };
         int[][] intArr2 = {
                 {0, 2},
-                {2, 2},
-                {2, 0}
+                {0, 2},
+                {0, 2},
+                {2, 2}
         };
         int[][] intArr3 = {
                 {3, 0},
@@ -35,20 +35,18 @@ public class Game {
                 {5, 0, 5}
         };
         int[][] intArr6 = {
-                {6, 6},
-                {0, 6},
-                {0, 6},
-                {0, 6}
+                {6, 6, 6},
+                {0, 0, 6},
+                {0, 0, 6}
         };
         int[][] intArr7 = {
                 {0, 7, 0},
-                {7, 7, 0},
-                {0, 7, 7}
+                {7, 7, 7},
+                {0, 7, 0}
         };
         int[][] intArr8 = {
-                {0, 8},
                 {8, 8},
-                {0, 8}
+                {8, 8}
         };
         int[][] intArr9 = {
                 {9, 0, 0},
@@ -56,9 +54,7 @@ public class Game {
                 {0, 9, 9}
         };
         int[][] intArr10 = {
-                {0, 0, 10},
-                {0, 0, 10},
-                {10, 10, 10}
+                {10, 10, 10, 10}
         };
         int[][] intArr11 = {
                 {11, 11, 0},
@@ -69,31 +65,18 @@ public class Game {
                 {12, 12}
         };
 
-        Block block1 = new Block(intArr1, 3, true);
-        Block block2 = new Block(intArr2, 1, true);
-        Block block3 = new Block(intArr3, 3, true);
-        Block block4 = new Block(intArr4, 3, true);
-        Block block5 = new Block(intArr5, 3, false);
-        Block block6 = new Block(intArr6, 3, true);
-        Block block7 = new Block(intArr7, 3, true);
-        Block block8 = new Block(intArr8, 3, false);
-        Block block9 = new Block(intArr9, 3, false);
-        Block block10 = new Block(intArr10, 3, false);
-        Block block11 = new Block(intArr11, 3,true);
-        Block block12 = new Block(intArr12, 3, false);
-
-        blockList.add(block1);
-        blockList.add(block2);
-        blockList.add(block3);
-        blockList.add(block4);
-        blockList.add(block5);
-        blockList.add(block6);
-        blockList.add(block7);
-        blockList.add(block8);
-        blockList.add(block9);
-        blockList.add(block10);
-        blockList.add(block11);
-        blockList.add(block12);
+        blockList.add(new Block(intArr1));
+        blockList.add(new Block(intArr2));
+        blockList.add(new Block(intArr3));
+        blockList.add(new Block(intArr4));
+        blockList.add(new Block(intArr5));
+        blockList.add(new Block(intArr6));
+        blockList.add(new Block(intArr7));
+        blockList.add(new Block(intArr8));
+        blockList.add(new Block(intArr9));
+        blockList.add(new Block(intArr10));
+        blockList.add(new Block(intArr11));
+        blockList.add(new Block(intArr12));
 
         return this.blockList;
     }
@@ -110,7 +93,7 @@ public class Game {
                 if (tempBlockPackage.getBlockList().isEmpty()) {
                     this.solutionList.add(tempBlockPackage);
                     counter++;
-                    if (counter % 1000 == 0) generateHTMLFile(this.solutionList, counter - 1000, counter);
+                    if (counter % 1000 == 0) generateHTMLFile(counter - 1000, counter);
                     return;
                 }
                 permute(tempBlockPackage);
@@ -177,7 +160,7 @@ public class Game {
         return null;
     }
 
-    public void printSolutions() {
+    public void printSolutionsInConsole() {
         for (int height = 0; height < solutionList.size(); height++) {
             System.out.println("\n" + (height + 1) + ":");
             for (int width = 0; width < solutionList.get(height).getGrid().length; width++) {
@@ -186,10 +169,14 @@ public class Game {
         }
     }
 
-    public void generateHTMLFile(List<BlockPackage> solutions, int start, int stop) {
-        // TODO: print last <1000 solutions
+    public void generateLastSolutions() {
+        int left = counter % 1000;
+        generateHTMLFile(counter - left, counter);
+    }
+
+    public void generateHTMLFile(int start, int stop) {
         HTMLConverter htmlConverter = new HTMLConverter();
-        htmlConverter.generateHTML(solutions, start, stop);
-        System.out.println("<=========[ HTML FILE \"Lonpos_" + stop + "\" GENERATED ]=========>");
+        htmlConverter.generateHTML(this.solutionList, start, stop);
+        System.out.println("<=========[ HTML FILE \"lonpos_" + stop + "\" GENERATED ]=========>");
     }
 }

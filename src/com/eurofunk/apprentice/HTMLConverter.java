@@ -15,7 +15,7 @@ public class HTMLConverter {
                 "    <link rel=\"stylesheet\" href=\"index.css\">\n" +
                 "</head>\n" +
                 "<body>\n" +
-                "<div class=\"header\">Lonpos Solutions |" + start + "-" + stop + "</div><div class=\"space\"></div>";
+                "<div class=\"header\">Lonpos Solutions | " + start + "-" + stop + "</div><div class=\"space\"></div>";
 
         String end = "\n" +
                 "</body>\n" +
@@ -45,7 +45,6 @@ public class HTMLConverter {
             myWriter.write(data);
             myWriter.close();
         } catch (IOException e) {
-            System.out.println("Error alla");
             e.printStackTrace();
         }
     }
@@ -55,29 +54,29 @@ public class HTMLConverter {
             default:
                 return "";
             case 1:
-                return "red";
-            case 2:
-                return "blue";
-            case 3:
-                return "yellow";
-            case 4:
-                return "violet";
-            case 5:
-                return "darkRed";
-            case 6:
-                return "pink";
-            case 7:
-                return "lime";
-            case 8:
-                return "turquoise";
-            case 9:
                 return "orange";
+            case 2:
+                return "dark-blue";
+            case 3:
+                return "dark-green";
+            case 4:
+                return "pink-skin";
+            case 5:
+                return "yellow";
+            case 6:
+                return "light-blue";
+            case 7:
+                return "darker-grey";
+            case 8:
+                return "lime-green";
+            case 9:
+                return "pink";
             case 10:
-                return "darkBlue";
+                return "purple";
             case 11:
-                return "lightGreen";
+                return "red";
             case 12:
-                return "lightBlue";
+                return "light-grey";
         }
     }
 }

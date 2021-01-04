@@ -16,4 +16,14 @@ public class Variation {
     public int getStartIndex() {
         return startIndex;
     }
+
+    public boolean equals(Variation variation) {
+        if (variation.getShape().length != this.getShape().length || variation.getShape()[0].length != this.getShape()[0].length) return false;
+        for (int width = 0; width < variation.getShape().length; width++) {
+            for (int height = 0; height < variation.getShape()[width].length; height++) {
+                if (variation.getShape()[width][height] != this.getShape()[width][height]) return false;
+            }
+        }
+        return true;
+    }
 }

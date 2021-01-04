@@ -9,8 +9,8 @@ public class Main {
         ArrayList<Block> blockList = game.initBlocks();
 
         game.permute(new BlockPackage(blockList,  5, 11));
-        game.printSolutions();
-        //game.generateHTMLFile();
+        game.generateLastSolutions();
+        game.printSolutionsInConsole();
     }
 
 }
