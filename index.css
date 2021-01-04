@@ -33,43 +33,36 @@ body {
 }
 
 .tile {
-display: inline-flex;
-flex-wrap: wrap;
-height: 25px;
-width: 25px;
-border-radius: 25px;
-background: #fbfff0;
-padding: 0;
-margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    height: 25px;
+    width: 25px;
+    border-radius: 25px;
+    background: #fbfff0;
+    padding: 0;
+    margin: 0;
 }
 
+.pink-skin {background: #ffbfbf;}
 
-
-
-.violet {background: #9F6B99;}
-
-
-.darkRed {background: #A13941;}
-
-.red {background: #c72c41;}
+.yellow {background: #eebb4c;}
 
 .orange {background: #d85426;}
 
-.pink {background: #f67280;}
+.pink {background: #d64997;}
 
-.yellow {background: #dba531;}
+.light-blue {background: #93bbda;}
 
+.dark-green {background: #17854e;}
 
-.darkBlue {background: #333D79;}
+.purple {background: #6b366b;}
 
-.blue {background: #05659e;}
+.dark-blue {background: #3138a0;}
 
-.lightBlue {background: #93bbda;}
+.light-grey {background: #ccc;}
 
+.red {background: #c72c41;}
 
-.lightGreen {background: #2a9d8f;}
+.darker-grey {background: #9a9b98;}
 
-.lime {background: #9fc13f;}
-
-.turquoise {background: #06d6a0;}
-
+.lime-green {background: #69dd73;}
